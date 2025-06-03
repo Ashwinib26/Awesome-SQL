@@ -6,9 +6,13 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/SQLquery')
+@app.route('/sqlquery')
 def sqlquery():
     return render_template('SQLquery.html')
+
+@app.route('/practice')
+def practice():
+    return render_template('practice.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
