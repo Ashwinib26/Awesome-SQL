@@ -1,49 +1,147 @@
+/* Base styles */
 body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #1e293b;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1e293b;
-      color: white;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    @media screen and (max-width: 600px) {
-      main {
-        padding: 20px;
-      }
-    }
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Main Section */
+main {
+  padding: 40px 20px;
+}
+
+/* Section Heading */
+h2.section-heading {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Carousel container */
+.carousel {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel item styling — no transition here, to keep fade working */
+.carousel-item {
+  background-color: #f3f4f6;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  /* position and opacity are handled by Bootstrap fade */
+}
+
+/* Images */
+.carousel-item img {
+  max-height: 400px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s ease;
+}
+
+/* Slight zoom on hover */
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Caption styling */
+.carousel-caption {
+  background: rgba(137, 151, 189, 0.85);
+  border-radius: 12px;
+  padding: 18px 25px;
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  bottom: 25px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption h5 {
+  color: #fff;
+  font-size: 1.0rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  margin: 0;
+}
+
+/* Carousel indicators (dots) */
+.carousel-indicators {
+  bottom: 10px;
+}
+
+.carousel-indicators button {
+  background-color: #1e3a8a;
+  opacity: 0.7;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #3b82f6;
+  opacity: 1;
+}
+
+/* Carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(30, 58, 138, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 60px;
+  font-size: 14px;
+}
