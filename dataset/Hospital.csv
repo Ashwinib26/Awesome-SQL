@@ -1,0 +1,21 @@
+hospital_id,name,location,type,capacity,num_doctors,established_year
+H101,CityCare Hospital,Mumbai,Multi-specialty,250,60,2001
+H102,Apollo Health,Delhi,Multi-specialty,300,75,1998
+H103,Sanjeevani Hospital,Bangalore,General,150,40,2005
+H104,HopeCare Clinic,Pune,Clinic,50,15,2015
+H105,Fortis Hospital,Chennai,Multi-specialty,400,90,1997
+H106,LifeLine Hospital,Ahmedabad,General,200,50,2003
+H107,Healing Hands Hospital,Hyderabad,Multi-specialty,350,80,2000
+H108,GreenLeaf Medical,Jaipur,Clinic,60,20,2012
+H109,City Hospital,Kolkata,General,180,45,2006
+H110,Medilife Centre,Bangalore,Clinic,70,18,2014
+H111,HeartCare Institute,Delhi,Cardiac,220,55,2002
+H112,Sunrise Hospital,Chennai,Multi-specialty,310,70,1999
+H113,Shanti Sadan,Mumbai,General,160,35,2008
+H114,Wellness Clinic,Pune,Clinic,40,12,2017
+H115,Surya Hospital,Hyderabad,Children's,180,42,2010
+H116,NeuroPlus Centre,Bangalore,Neurology,130,33,2011
+H117,EyeTrust Hospital,Ahmedabad,Ophthalmology,90,25,2013
+H118,CancerCare Hospital,Kolkata,Cancer,210,48,2007
+H119,MindSpace Hospital,Jaipur,Mental Health,100,30,2016
+H120,Sanjeevani Plus,Delhi,Multi-specialty,280,65,2004

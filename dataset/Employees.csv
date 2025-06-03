@@ -1,0 +1,21 @@
+emp_id,name,age,department,salary,joining_date,city
+E101,Raj Malhotra,30,IT,60000,2019-04-21,Mumbai
+E102,Priya Nair,28,HR,50000,2020-01-15,Delhi
+E103,Amit Joshi,35,Finance,70000,2018-09-30,Bangalore
+E104,Sonal Mehta,26,Marketing,45000,2021-07-10,Pune
+E105,Vikas Kapoor,40,IT,80000,2016-06-18,Hyderabad
+E106,Neha Sharma,29,Finance,65000,2019-11-05,Chennai
+E107,Manoj Yadav,33,HR,52000,2020-02-22,Ahmedabad
+E108,Shruti Desai,27,IT,61000,2021-04-12,Jaipur
+E109,Rahul Verma,38,Marketing,58000,2017-10-25,Kolkata
+E110,Isha Sen,31,Finance,72000,2018-12-11,Bangalore
+E111,Saurabh Dixit,34,HR,53000,2019-03-19,Delhi
+E112,Diya Patel,25,Marketing,46000,2022-01-10,Mumbai
+E113,Ankit Rathi,29,IT,64000,2020-08-28,Pune
+E114,Meera Rao,30,Finance,70000,2019-09-14,Hyderabad
+E115,Ajay Singh,36,IT,75000,2017-07-01,Chennai
+E116,Nikita Dube,27,HR,49000,2021-05-06,Ahmedabad
+E117,Tanmay Shah,32,Marketing,56000,2018-02-15,Bangalore
+E118,Krishna Menon,28,IT,62000,2020-10-03,Jaipur
+E119,Rekha Pandey,31,Finance,71000,2018-06-24,Kolkata
+E120,Dev Mishra,33,HR,54000,2019-08-17,Delhi
