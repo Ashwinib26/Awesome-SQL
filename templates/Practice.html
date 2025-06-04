@@ -45,9 +45,9 @@
         body: JSON.stringify({ query })
       });
 
-      const text = await res.text(); // grab raw response
+      const text = await res.text(); // get raw text
       try {
-        const data = JSON.parse(text);
+        const data = JSON.parse(text); // try to parse JSON
         const output = document.getElementById('result');
 
         if (data.error) {

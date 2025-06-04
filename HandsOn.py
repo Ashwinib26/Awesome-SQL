@@ -9,12 +9,13 @@ DATA_FOLDER = os.path.join(os.getcwd(), 'dataset')
 
 @app.route('/')
 def home():
-    return render_template('practice.html')  # serve practice.html
+    return render_template('practice.html')  # serve HTML
 
 @app.route('/run_query', methods=['POST'])
 def run_query():
     query = request.json.get('query', '')
     try:
+        # Load all CSV files into in-memory DB
         conn = sqlite3.connect(':memory:')
         for filename in os.listdir(DATA_FOLDER):
             if filename.endswith('.csv'):
@@ -26,6 +27,7 @@ def run_query():
         cursor.execute(query)
         rows = cursor.fetchall()
         columns = [desc[0] for desc in cursor.description]
+
         return jsonify({'columns': columns, 'rows': rows})
 
     except Exception as e:
