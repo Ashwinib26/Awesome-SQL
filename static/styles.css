@@ -167,3 +167,49 @@ footer {
   transform: translateY(-2px);
 }
 
+
+.accordion-button {
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #c7d2fe;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #1e3a8a;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+code {
+  background-color: #f3f4f6;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #b91c1c;
+}
+
+/* Button Styles */
+.btn-success {
+  background-color: #059669;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+}
+
+.btn-success:hover {
+  background-color: #047857;
+}
+
+.btn-outline-primary {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+}
+
