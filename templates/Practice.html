@@ -44,20 +44,27 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query })
       });
-      const data = await res.json();
-      const output = document.getElementById('result');
 
-      if (data.error) {
-        output.textContent = "❌ Error: " + data.error;
-      } else if (data.columns && data.rows) {
-        let table = '';
-        table += data.columns.join('\t') + '\n';
-        data.rows.forEach(row => {
-          table += row.join('\t') + '\n';
-        });
-        output.textContent = table;
-      } else {
-        output.textContent = data.message;
+      const text = await res.text(); // grab raw response
+      try {
+        const data = JSON.parse(text);
+        const output = document.getElementById('result');
+
+        if (data.error) {
+          output.textContent = "❌ Error: " + data.error;
+        } else if (data.columns && data.rows) {
+          let table = '';
+          table += data.columns.join('\t') + '\n';
+          data.rows.forEach(row => {
+            table += row.join('\t') + '\n';
+          });
+          output.textContent = table;
+        } else {
+          output.textContent = data.message || '✅ Query executed.';
+        }
+      } catch (err) {
+        console.error("Raw server response:", text);
+        document.getElementById('result').textContent = "❌ Unexpected response. See console for details.";
       }
     }
   </script>
