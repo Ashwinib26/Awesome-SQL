@@ -27,9 +27,18 @@ def run_query():
         conn = sqlite3.connect(':memory:')
         for filename in os.listdir(DATA_FOLDER):
             if filename.endswith('.csv'):
-                table_name = os.path.splitext(filename)[0]
-                df = pd.read_csv(os.path.join(DATA_FOLDER, filename))
-                df.to_sql(table_name, conn, index=False, if_exists='replace')
+                file_path = os.path.join(DATA_FOLDER, filename)
+                if os.path.getsize(file_path) == 0:
+                    continue  # Skip empty files
+                try:
+                    df = pd.read_csv(file_path)
+                    if df.empty or df.columns.size == 0:
+                        continue  # Skip files with no columns
+                    table_name = os.path.splitext(filename)[0]
+                    df.to_sql(table_name, conn, index=False, if_exists='replace')
+                except Exception as e:
+                    print(f"⚠️ Skipping {filename}: {e}")
+
 
         # 🔍 Execute user query
         cursor = conn.cursor()
