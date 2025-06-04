@@ -275,7 +275,7 @@ footer {
 .custom-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #a66478; /* Elegant Purple */
+  background-color: #a55b71; /* Elegant Purple */
   color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
@@ -288,7 +288,17 @@ footer {
 }
 
 .custom-btn:hover {
-  background-color: #b7506d; /* Richer Purple */
+  background-color: #b83d60; /* Richer Purple */
   box-shadow: 0 6px 14px rgba(89, 54, 160, 0.4);
   transform: translateY(-2px);
 }
+
+.gradient-bg {
+  background: linear-gradient(135deg, #f5c6d6, #8b1e3f); /* light pink to maroon */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-attachment: fixed;
+}
+
