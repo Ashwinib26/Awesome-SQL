@@ -1,47 +1,183 @@
-/* Base styles */
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9fafb;
   color: #1f2937;
-  margin: 0;
-  padding: 0;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
   background-color: #1e3a8a;
   color: white;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 4px solid #3b82f6;
 }
 
-.title {
-  font-size: 28px;
-  font-weight: bold;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.tagline {
-  font-size: 16px;
+header .lead {
+  font-size: 1.2rem;
   font-style: italic;
-  margin-top: 5px;
+  opacity: 0.9;
 }
 
-/* Main Section */
+/* Main */
 main {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Section Heading */
-h2.section-heading {
-  margin-top: 40px;
-  text-align: center;
-  font-weight: 600;
+/* Section Headings */
+h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
 }
 
-/* Carousel container */
+/* Paragraphs */
+p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+/* Accordion */
+.accordion {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.accordion-header {
+  background-color: #e0e7ff;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #c7d2fe;
+}
+
+.accordion-button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-collapse {
+  max-height: 500px; /* Set high enough to accommodate content */
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  padding: 20px;
+  font-size: 1rem;
+  border-left: 5px solid #1e3a8a;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+/* Code Blocks */
+code {
+  background-color: #f3f4f6;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #b91c1c;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.btn-success {
+  background-color: #059669;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #047857;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-outline-primary:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .accordion-body {
+    font-size: 0.95rem;
+  }
+}
 .carousel {
   max-width: 900px;
   margin: 0 auto;
@@ -136,16 +272,6 @@ h2.section-heading {
   background-color: #2563eb;
 }
 
-/* Footer */
-footer {
-  background-color: #1e3a8a;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 60px;
-  font-size: 14px;
-}
-
 .custom-btn {
   display: inline-block;
   padding: 12px 24px;
@@ -166,50 +292,3 @@ footer {
   box-shadow: 0 6px 14px rgba(89, 54, 160, 0.4);
   transform: translateY(-2px);
 }
-
-
-.accordion-button {
-  background-color: #e0e7ff;
-  color: #1e3a8a;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:hover {
-  background-color: #c7d2fe;
-}
-
-.accordion-body {
-  background-color: #ffffff;
-  padding: 1rem 1.5rem;
-  border-left: 4px solid #1e3a8a;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-code {
-  background-color: #f3f4f6;
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  color: #b91c1c;
-}
-
-/* Button Styles */
-.btn-success {
-  background-color: #059669;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  font-size: 1.1rem;
-}
-
-.btn-success:hover {
-  background-color: #047857;
-}
-
-.btn-outline-primary {
-  font-size: 1rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-}
-
