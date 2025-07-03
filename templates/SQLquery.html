@@ -1,227 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SQL Guide | AWESOME_SQL</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #dfefff, #ffffff);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .tagline {
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 0.7rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .query-btn {
+      margin-bottom: 0.8rem;
+      width: 100%;
+      text-align: left;
+    }
+    .optional {
+      display: none;
+    }
+  </style>
 </head>
-<body class="gradient-bg">
+<body>
 
-  <header>
-    <h1>📚 AWESOME_SQL</h1>
-    <div class="tagline">Learn SQL interactively, with real datasets : Interactive. Practical. Powerful.</div>
-  </header>
+<header>
+  <h1>📚 AWESOME_SQL</h1>
+  <div class="tagline">Learn SQL interactively, with real datasets: Interactive. Practical. Powerful.</div>
+</header>
 
-  <main>
-    <section>
-      <h2 class="mb-3">🔹 What is SQL?</h2>
-      <strong class="fs-5">
-        SQL (Structured Query Language) is a standardized programming language used for managing and manipulating relational databases.
-        <br>
-        Whether you're analyzing business trends, building web apps, or powering dashboards, SQL is a fundamental skill for working with data efficiently.
-      </strong>
-    </section>
+<main>
+  <section>
+    <h2 class="mb-3">🔹 What is SQL?</h2>
+    <p class="fs-5">
+      SQL (Structured Query Language) is a standardized programming language used for managing and manipulating relational databases.
+      Whether you're analyzing business trends, building web apps, or powering dashboards, SQL is a fundamental skill for working with data efficiently.
+    </p>
+  </section>
 
-    <section class="mt-5">
-      <h2 class="mb-4">🔸 Core SQL Concepts</h2>
+  <section class="mt-5">
+    <h2 class="mb-4">🔸 Core SQL Queries</h2>
 
-      <div class="accordion" id="sqlAccordion">
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descSelect">🔍 SELECT — Retrieve Data</button>
+    <div id="descSelect" class="collapse mb-3">
+      <div class="card card-body">
+        <code>SELECT name, age FROM students;</code>
+      </div>
+    </div>
 
-        <!-- SELECT -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSelect">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelect" aria-expanded="true">
-              🔍 SELECT — Retrieve Data
-            </button>
-          </h2>
-          <div id="collapseSelect" class="accordion-collapse collapse show" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              The <code>SELECT</code> statement fetches data from one or more tables.
-              <br><br><code>SELECT name, age FROM students;</code>
-            </div>
-          </div>
-        </div>
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descInsert">📝 INSERT — Add New Data</button>
+    <div id="descInsert" class="collapse mb-3">
+      <div class="card card-body">
+        <code>INSERT INTO students (name, age) VALUES ('Alice', 22);</code>
+      </div>
+    </div>
 
-        <!-- INSERT -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingInsert">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInsert">
-              📝 INSERT — Add New Data
-            </button>
-          </h2>
-          <div id="collapseInsert" class="accordion-collapse collapse" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              Use <code>INSERT</code> to add new records to a table.
-              <br><br><code>INSERT INTO students (name, age) VALUES ('Alice', 22);</code>
-            </div>
-          </div>
-        </div>
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descUpdate">🔧 UPDATE — Modify Existing Data</button>
+    <div id="descUpdate" class="collapse mb-3">
+      <div class="card card-body">
+        <code>UPDATE students SET age = 23 WHERE name = 'Alice';</code>
+      </div>
+    </div>
 
-        <!-- UPDATE -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingUpdate">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdate">
-              🔧 UPDATE — Modify Existing Data
-            </button>
-          </h2>
-          <div id="collapseUpdate" class="accordion-collapse collapse" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              <code>UPDATE</code> changes existing values in one or more rows.
-              <br><br><code>UPDATE students SET age = 23 WHERE name = 'Alice';</code>
-            </div>
-          </div>
-        </div>
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descDelete">❌ DELETE — Remove Data</button>
+    <div id="descDelete" class="collapse mb-3">
+      <div class="card card-body">
+        <code>DELETE FROM students WHERE age &lt; 18;</code>
+      </div>
+    </div>
 
-        <!-- DELETE -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingDelete">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDelete">
-              ❌ DELETE — Remove Data
-            </button>
-          </h2>
-          <div id="collapseDelete" class="accordion-collapse collapse" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              <code>DELETE</code> permanently removes rows that meet a condition.
-              <br><br><code>DELETE FROM students WHERE age &lt; 18;</code>
-            </div>
-          </div>
-        </div>
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descWhere">🎯 WHERE — Filter Results</button>
+    <div id="descWhere" class="collapse mb-3">
+      <div class="card card-body">
+        <code>SELECT * FROM students WHERE age &gt; 20;</code>
+      </div>
+    </div>
 
-        <!-- WHERE -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingWhere">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWhere">
-              🎯 WHERE — Filter Results
-            </button>
-          </h2>
-          <div id="collapseWhere" class="accordion-collapse collapse" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              The <code>WHERE</code> clause restricts results based on conditions.
-              <br><br><code>SELECT * FROM students WHERE age > 20;</code>
-            </div>
-          </div>
-        </div>
+    <button class="btn btn-outline-primary query-btn" data-bs-toggle="collapse" data-bs-target="#descJoin">🔗 JOIN — Combine Tables</button>
+    <div id="descJoin" class="collapse mb-3">
+      <div class="card card-body">
+        <code>SELECT s.name, c.course FROM students s JOIN courses c ON s.id = c.student_id;</code>
+      </div>
+    </div>
 
-        <!-- JOIN -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingJoin">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJoin">
-              🔗 JOIN — Combine Tables
-            </button>
-          </h2>
-          <div id="collapseJoin" class="accordion-collapse collapse" data-bs-parent="#sqlAccordion">
-            <div class="accordion-body">
-              A <code>JOIN</code> merges rows from multiple tables based on relationships.
-              <br><br><code>SELECT s.name, c.course FROM students s JOIN courses c ON s.id = c.student_id;</code>
-            </div>
-          </div>
-        </div>
+    <!-- Optional Queries -->
+    <div id="optionalQueries" class="optional mt-4">
 
-        <!-- Read More Button -->
-        <div class="text-center mt-4">
-          <button class="btn btn-outline-secondary" id="readMoreBtn">📖 Read More SQL Concepts</button>
-        </div>
-
-        <!-- More SQL Concepts: Hidden by Default -->
-        <div class="accordion mt-3" id="moreSqlAccordion" style="display: none;">
-
-          <!-- LIKE -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingLike">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLike">
-                🔍 LIKE — Pattern Matching
-              </button>
-            </h2>
-            <div id="collapseLike" class="accordion-collapse collapse" data-bs-parent="#moreSqlAccordion">
-              <div class="accordion-body">
-                Used to search for a specified pattern in a column.<br>
-                <code>SELECT * FROM students WHERE name LIKE 'A%';</code>
-              </div>
-            </div>
-          </div>
-
-          <!-- IN -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingIn">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIn">
-                📦 IN — Match Any from List
-              </button>
-            </h2>
-            <div id="collapseIn" class="accordion-collapse collapse" data-bs-parent="#moreSqlAccordion">
-              <div class="accordion-body">
-                Filters records where a column value is in a specified list.<br>
-                <code>SELECT * FROM students WHERE age IN (20, 21, 22);</code>
-              </div>
-            </div>
-          </div>
-
-          <!-- GROUP BY -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingGroupBy">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroupBy">
-                📊 GROUP BY — Aggregate by Column
-              </button>
-            </h2>
-            <div id="collapseGroupBy" class="accordion-collapse collapse" data-bs-parent="#moreSqlAccordion">
-              <div class="accordion-body">
-                Groups rows that have the same values into summary rows.<br>
-                <code>SELECT age, COUNT(*) FROM students GROUP BY age;</code>
-              </div>
-            </div>
-          </div>
-
-          <!-- ORDER BY -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOrderBy">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrderBy">
-                🔢 ORDER BY — Sort Results
-              </button>
-            </h2>
-            <div id="collapseOrderBy" class="accordion-collapse collapse" data-bs-parent="#moreSqlAccordion">
-              <div class="accordion-body">
-                Sorts result set in ascending or descending order.<br>
-                <code>SELECT * FROM students ORDER BY age DESC;</code>
-              </div>
-            </div>
-          </div>
-
-          <!-- LIMIT -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingLimit">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLimit">
-                ⏱️ LIMIT — Restrict Result Count
-              </button>
-            </h2>
-            <div id="collapseLimit" class="accordion-collapse collapse" data-bs-parent="#moreSqlAccordion">
-              <div class="accordion-body">
-                Limits the number of rows returned by a query.<br>
-                <code>SELECT * FROM students LIMIT 5;</code>
-              </div>
-            </div>
-          </div>
-
+      <button class="btn btn-outline-success query-btn" data-bs-toggle="collapse" data-bs-target="#descLike">🔍 LIKE — Pattern Matching</button>
+      <div id="descLike" class="collapse mb-3">
+        <div class="card card-body">
+          <code>SELECT * FROM students WHERE name LIKE 'A%';</code>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    &copy; 2025 AWESOME_SQL | Created by Ashwini Bisen
-  </footer>
+      <button class="btn btn-outline-success query-btn" data-bs-toggle="collapse" data-bs-target="#descIn">📦 IN — Match Any from List</button>
+      <div id="descIn" class="collapse mb-3">
+        <div class="card card-body">
+          <code>SELECT * FROM students WHERE age IN (20, 21, 22);</code>
+        </div>
+      </div>
 
-  <script>
-    // Toggle extra concepts section
-    const readMoreBtn = document.getElementById('readMoreBtn');
-    const moreAccordion = document.getElementById('moreSqlAccordion');
+      <button class="btn btn-outline-success query-btn" data-bs-toggle="collapse" data-bs-target="#descGroupBy">📊 GROUP BY — Aggregate by Column</button>
+      <div id="descGroupBy" class="collapse mb-3">
+        <div class="card card-body">
+          <code>SELECT age, COUNT(*) FROM students GROUP BY age;</code>
+        </div>
+      </div>
 
-    readMoreBtn.addEventListener('click', () => {
-      const isHidden = moreAccordion.style.display === 'none';
-      moreAccordion.style.display = isHidden ? 'block' : 'none';
-      readMoreBtn.textContent = isHidden ? '🔽 Hide Additional Concepts' : '📖 Read More SQL Concepts';
-    });
-  </script>
+      <button class="btn btn-outline-success query-btn" data-bs-toggle="collapse" data-bs-target="#descOrderBy">🔢 ORDER BY — Sort Results</button>
+      <div id="descOrderBy" class="collapse mb-3">
+        <div class="card card-body">
+          <code>SELECT * FROM students ORDER BY age DESC;</code>
+        </div>
+      </div>
+
+      <button class="btn btn-outline-success query-btn" data-bs-toggle="collapse" data-bs-target="#descLimit">⏱️ LIMIT — Restrict Result Count</button>
+      <div id="descLimit" class="collapse mb-3">
+        <div class="card card-body">
+          <code>SELECT * FROM students LIMIT 5;</code>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-secondary" id="readMoreBtn">📖 Read More SQL Concepts</button>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 AWESOME_SQL | Created by Ashwini Bisen
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const optionalSection = document.getElementById('optionalQueries');
+  let isVisible = false;
+
+  readMoreBtn.addEventListener('click', () => {
+    isVisible = !isVisible;
+    optionalSection.style.display = isVisible ? 'block' : 'none';
+    readMoreBtn.textContent = isVisible ? '🔽 Hide Additional Concepts' : '📖 Read More SQL Concepts';
+  });
+</script>
 
 </body>
 </html>
