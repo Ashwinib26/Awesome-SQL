@@ -14,11 +14,11 @@ body {
 
 /* Header */
 header {
-  background-color: #8096d2;
-  color: white;
+  background-color: #680f34;
+  color: rgb(227, 194, 194);
   padding: 30px 20px;
   text-align: center;
-  border-bottom: 4px solid #1e3a8a;
+  border-bottom: 4px solid #3f0212;
 }
 
 header h1 {
@@ -298,7 +298,7 @@ footer {
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #f5c6d6, #8b1e3f); /* light pink to maroon */
+  background: linear-gradient(135deg, #f5c6d6, #b06868); /* light pink to maroon */
   min-height: 100vh;
   margin: 0;
   padding: 0;
