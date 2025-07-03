@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SQL Guide | AWESOME_SQL</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(135deg, #dfefff, #ffffff);
@@ -13,28 +15,11 @@
       display: flex;
       flex-direction: column;
     }
-    header {
-      background-color: #007BFF;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .tagline {
-      font-size: 1rem;
-      margin-top: 0.3rem;
-    }
     main {
       flex: 1;
       padding: 2rem;
       max-width: 700px;
       margin: auto;
-    }
-    footer {
-      background-color: #f8f9fa;
-      text-align: center;
-      padding: 0.7rem;
-      font-size: 0.9rem;
-      color: #555;
     }
     .query-btn {
       margin-bottom: 0.8rem;
@@ -48,10 +33,7 @@
 </head>
 <body>
 
-<header>
-  <h1>📚 AWESOME_SQL</h1>
-  <div class="tagline">Learn SQL interactively, with real datasets: Interactive. Practical. Powerful.</div>
-</header>
+  {% include 'components/header.html' %}
 
 <main>
   <section>
@@ -154,9 +136,7 @@
   </section>
 </main>
 
-<footer>
-  &copy; 2025 AWESOME_SQL | Created by Ashwini Bisen
-</footer>
+{% include 'components/footer.html' %}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
