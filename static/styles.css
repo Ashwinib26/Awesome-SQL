@@ -148,6 +148,10 @@ code {
   color: white;
 }
 
+.btn-primary {
+  background-color: #974369;
+}
+
 .btn-success:hover {
   background-color: #89354e;
 }
@@ -174,60 +178,46 @@ footer {
 }
 
 .carousel {
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Carousel item styling — no transition here, to keep fade working */
 .carousel-item {
-  background-color: #f3f4f6;
   display: flex !important;
   align-items: center;
   justify-content: center;
   min-height: 420px;
-  padding: 15px 25px;
-  box-sizing: border-box;
-  /* position and opacity are handled by Bootstrap fade */
+  padding: 0; /* Remove inner padding to avoid extra space */
 }
 
-/* Images */
 .carousel-item img {
-  max-height: 400px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fully cover the item */
+  border-radius: 0;  /* Remove border radius on images to match container */
+  box-shadow: none; /* Remove shadow from image to match edge */
 }
 
-/* Slight zoom on hover */
-.carousel-item img:hover {
-  transform: scale(1.05);
-}
-
-/* Caption styling */
 .carousel-caption {
-  background: rgba(137, 151, 189, 0.85);
-  border-radius: 12px;
-  padding: 18px 25px;
-  max-width: 75%;
+  background: rgba(30, 58, 138, 0.6);
+  border-radius: 8px;
+  padding: 10px 15px;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center;
-  bottom: 25px !important;
+  bottom: 30px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-caption h5 {
   color: #fff;
-  font-size: 1.0rem;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  font-size: 1rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -237,35 +227,26 @@ footer {
 }
 
 .carousel-indicators button {
-  background-color: #1e3a8a;
+  background-color: #974369; /* match your theme */
   opacity: 0.7;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 
 .carousel-indicators .active {
-  background-color: #3b82f6;
+  background-color: #7c3455;
   opacity: 1;
 }
 
-/* Carousel controls */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(30, 58, 138, 0.7);
-  transition: background-color 0.3s ease;
+/* Hide carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: #2563eb;
-}
 
 .custom-btn {
   display: inline-block;
@@ -295,5 +276,16 @@ footer {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background-attachment: fixed;
+}
+
+header nav a.btn {
+  background-color: #bb6c90;
+  color: #fff;
+  border: none;
+}
+
+header nav a.btn:hover {
+  background-color: #a76381; /* Slightly darker on hover */
+  color: #fff;
 }
 
