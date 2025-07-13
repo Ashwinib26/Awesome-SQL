@@ -14,7 +14,7 @@ body {
 
 /* Header */
 header {
-  background-color: #680f34;
+  background-color: #6d0f39;
   color: rgb(227, 194, 194);
   padding: 30px 20px;
   text-align: center;
@@ -42,7 +42,7 @@ main {
 /* Section Headings */
 h2 {
   font-size: 1.8rem;
-  color: #1e3a8a;
+  color: #6d0f39;
   margin-bottom: 10px;
 }
 
@@ -115,7 +115,7 @@ code {
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 0.95rem;
-  color: #b91c1c;
+  color: #6d0f39;
   display: inline-block;
   margin-top: 10px;
 }
@@ -133,29 +133,39 @@ code {
   text-align: center;
 }
 
+.btn-outline-success {
+    background-color: transparent;
+    color: #a55b71;
+    border: 2px solid #8a3a52;
+  }
+
+.btn-outline-success:hover {
+    background-color: #89354e;
+  }
+
 .btn-success {
-  background-color: #059669;
+  background-color: #a55b71;
   color: white;
 }
 
 .btn-success:hover {
-  background-color: #047857;
+  background-color: #89354e;
 }
 
 .btn-outline-primary {
   background-color: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  color: #a55b71;
+  border: 2px solid #8a3a52;
 }
 
 .btn-outline-primary:hover {
-  background-color: #2563eb;
+  background-color: #82374e;
   color: white;
 }
 
 /* Footer */
 footer {
-  background-color: #1e3a8a;
+  background-color: #6d0f39;
   color: white;
   text-align: center;
   padding: 20px;
@@ -163,25 +173,6 @@ footer {
   font-size: 0.95rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    padding: 10px 16px;
-    font-size: 0.95rem;
-  }
-
-  .accordion-body {
-    font-size: 0.95rem;
-  }
-}
 .carousel {
   max-width: 900px;
   margin: 0 auto;
@@ -298,7 +289,7 @@ footer {
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #f5c6d6, #b06868); /* light pink to maroon */
+  background: linear-gradient(135deg, #f5c6d6, #b77c7c); /* light pink to maroon */
   min-height: 100vh;
   margin: 0;
   padding: 0;
